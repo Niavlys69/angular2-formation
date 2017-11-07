@@ -2,7 +2,9 @@
   <ng-container *ngFor="let item of collection">
     <div class="card">
       <div class="card-header">
-        {{ item.state }}
+        <span class="state-0" *ngIf="state.ALIVRER === item.state">A livrer</span>
+        <span class="state-1" *ngIf="state.ENCOURS === item.state">En cours de livraison</span>
+        <span class="state-2" *ngIf="state.LIVREE === item.state">Commande livrée</span>
       </div>
       <div class="card-body">
         <h4 class="card-title">{{ item.name }}</h4>
