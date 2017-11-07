@@ -1,18 +1,18 @@
 <div class="container">
-  <form class="form" novalidate #form="ngForm" (ngSubmit)="process()">
+  <form class="form" novalidate (ngSubmit)="process()" [formGroup]="form">
 
     <div class="form-group">
-      <input [(ngModel)]="newItem.name" #nom="ngModel" name="name" class="form-control form-control-lg" type="text" placeholder="Nom et prénom" required minlength="5">
-      <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">Champs invalide</div>
+      <input formControlName="name" name="name" class="form-control form-control-lg" type="text" placeholder="Nom et prénom">
+      <div class="alert alert-danger" *ngIf="">Champs invalide</div>
     </div>
 
     <div class="form-group">
-        <input [(ngModel)]="newItem.reference" #ref="ngModel" name="ref" class="form-control form-control-lg" type="text" placeholder="Ex: 1234" required minlength="4">
-        <div class="alert alert-danger" *ngIf="ref.invalid && ref.touched">Champs invalide</div>
+        <input formControlName="ref" name="ref" class="form-control form-control-lg" type="text" placeholder="Ex: 1234">
+        <div class="alert alert-danger" *ngIf="">Champs invalide</div>
     </div>
 
     <div class="form-group">
-      <select [(ngModel)]="newItem.state" name="state" class="form-control form-control-lg">
+      <select formControlName="state" name="state" class="form-control form-control-lg">
         <option [ngValue]="state.ALIVRER">A LIVRER</option>
         <option [ngValue]="state.ENCOURS">EN COURS</option>
         <option [ngValue]="state.LIVREE">LIVREE</option>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Ajouter</button>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
     </div>
 
   </form>
