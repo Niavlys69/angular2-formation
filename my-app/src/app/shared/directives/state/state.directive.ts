@@ -4,6 +4,7 @@ import { State } from '../../../items/enums/state.enum';
 @Directive({
   selector: '[appState]'
 })
+
 export class StateDirective implements OnChanges {
   @Input('appState') appState: State;
   constructor(private _ElementRef: ElementRef, private _Renderer2: Renderer2) { }
@@ -14,13 +15,13 @@ export class StateDirective implements OnChanges {
     let text: string;
     switch (this.appState) {
       case State.ALIVRER:
-        text = 'A livrer';
+        text = 'A LIVRER';
         break;
       case State.ENCOURS:
-        text = 'En cours de livraison';
+        text = 'EN COURS DE LIVRAISON';
         break;
       case State.LIVREE:
-        text = 'Commande livrée';
+        text = 'LIVREE';
         break;
       default:
         console.log(this.appState);
