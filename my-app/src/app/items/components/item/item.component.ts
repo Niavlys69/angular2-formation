@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { State } from '../../enums/state.enum';
 import { CollectionService } from '../../../core/services/collection/collection.service';
@@ -7,7 +7,8 @@ import { ItemId } from '../../interfaces/item-id.model';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  styleUrls: ['./item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent implements OnInit {
   state = State;

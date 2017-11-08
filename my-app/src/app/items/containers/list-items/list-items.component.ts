@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -9,7 +9,8 @@ import { ItemId } from '../../interfaces/item-id.model';
 @Component({
   selector: 'app-list-items',
   templateUrl: './list-items.component.html',
-  styleUrls: ['./list-items.component.scss']
+  styleUrls: ['./list-items.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class ListItemsComponent implements OnInit {
