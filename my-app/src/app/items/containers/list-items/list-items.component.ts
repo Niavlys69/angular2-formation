@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Item } from '../../interfaces/item.model';
+import { Observable } from 'rxjs/Observable';
+
 import { State } from '../../enums/state.enum';
 import { CollectionService } from '../../../core/services/collection/collection.service';
+import { ItemId } from '../../interfaces/item-id.model';
 
 @Component({
   selector: 'app-list-items',
@@ -11,7 +13,7 @@ import { CollectionService } from '../../../core/services/collection/collection.
 })
 
 export class ListItemsComponent implements OnInit {
-  collection: Item[];
+  collection: Observable<ItemId[]>;
   state = State;
   constructor(private _CollectionService: CollectionService) { }
 

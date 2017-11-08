@@ -6,6 +6,7 @@ import { ListItemsComponent } from './items/containers/list-items/list-items.com
 import { AddComponent } from './items/containers/add/add.component';
 
 const appRoutes: Routes = [
+  { path: 'items', loadChildren: './items/items.module#ItemsModule' },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'

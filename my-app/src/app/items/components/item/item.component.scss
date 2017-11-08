@@ -3,14 +3,30 @@
   color: white;
 }
 
+.btn-danger {
+  cursor: pointer;
+}
+
 .state-0 {
-  background-color: rgb(247, 114, 114);
+  color: white;
 }
 
 .state-1 {
-  background-color: rgb(247, 195, 107);
+  color: white;
 }
 
 .state-2 {
-  background-color: rgb(106, 219, 106);
+  color: white;
+}
+
+.bgstate-0 {
+  background-color: rgb(245, 132, 132);
+}
+
+.bgstate-1 {
+  background-color: rgb(250, 196, 115);
+}
+
+.bgstate-2 {
+  background-color: rgb(109, 221, 109);
 }
